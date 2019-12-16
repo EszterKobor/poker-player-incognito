@@ -20,6 +20,15 @@ test_data = {
       "hole_cards":[],
       "version":"Version name 2",
       "id":1
+    },
+    {
+      "name": "Player 3",
+      "stack": 1000,
+      "status": "active",
+      "bet": 0,
+      "hole_cards": [],
+      "version": "Version name 2",
+      "id": 2
     }
   ],
   "tournament_id":"550d1d68cd7bd10003000003",

@@ -20,15 +20,13 @@ class Player:
 
         cards_to_choose_from = my_cards + community_cards
 
-
-
         to_call = current_buy_in - bet_already_made_me
         to_raise = to_call + minimum_raise
 
-        print(to_raise)
-
-        return to_raise
-
+        if len(game_data["players"]) > 2:
+            return 0
+        else:
+            return to_raise
 
     def showdown(self, game_state):
         pass
