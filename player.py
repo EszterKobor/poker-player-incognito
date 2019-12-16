@@ -25,7 +25,7 @@ class Player:
 
         actives_couter = 0
         for player in game_data["players"]:
-            if player["status"] == "active":
+            if player["status"] != "out":
                 actives_couter += 1
 
         if actives_couter > 2:
