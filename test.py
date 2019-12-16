@@ -31,7 +31,9 @@ test_data = {
   "dealer":0,
   "community_cards":[],
   "current_buy_in":0,
-  "pot":0
+  "pot":0,
+  "in_action":1,
+  "minimum_raise": 240
 }
 
 
