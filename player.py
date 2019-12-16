@@ -23,7 +23,12 @@ class Player:
         to_call = current_buy_in - bet_already_made_me
         to_raise = to_call + minimum_raise
 
-        if len(game_data["players"]) > 2:
+        actives_couter = 0
+        for player in game_data["players"]:
+            if player["status"] == "active":
+                actives_couter += 1
+
+        if actives_couter > 2:
             return 0
         else:
             return to_raise
