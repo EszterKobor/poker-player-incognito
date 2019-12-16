@@ -1,4 +1,5 @@
 import json
+import logging
 
 
 class Player:
@@ -7,6 +8,8 @@ class Player:
 
     def betRequest(self, game_state):
         game_data = json.loads(game_state)
+
+        logging.debug(game_data)
 
         in_action = game_data["in_action"]  # our player's index
         current_buy_in = game_data["current_buy_in"]
