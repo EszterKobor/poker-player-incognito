@@ -18,6 +18,16 @@ class Player:
             if ranks.count(rank) > 2:
                 return True
 
+
+    def is_high_pair(self, cards_to_choose_from):
+        ranks = self.get_ranks(cards_to_choose_from)
+        HIGHPAIRS = ["10", "J", "Q", "K", "A"]
+
+        for rank in ranks:
+            if ranks.count(rank) > 1:
+                if rank in HIGHPAIRS:
+                    return True
+
     def get_number_of_pairs(self, cards_to_choose_from):
         num_of_pairs = 0
         ranks = self.get_ranks(cards_to_choose_from)
@@ -32,7 +42,6 @@ class Player:
             if ranks.count(rank) > 1:
                 num_of_pairs += 1
 
-        print num_of_pairs
         return num_of_pairs
 
     def betRequest(self, game_state):
@@ -60,8 +69,9 @@ class Player:
                 actives_couter += 1
 
         if game_round == 0:
-            if self.get_number_of_pairs(cards_to_choose_from) == 1:
-                if to_call <= 50:
+            if self.get_number_of_pairs(cards_to_choose_from) == 1 or current_buy_in < 20:
+                if current_buy_in <= 50:
+                    print "yes"
                     return to_call
 
         if self.is_drill(cards_to_choose_from):

@@ -11,10 +11,10 @@ test_data = {
 
     "bet_index":0,
 
-    "small_blind": 10,
+    "small_blind": 60,
 
 
-    "current_buy_in": 320,
+    "current_buy_in": 60,
 
     "pot": 400,
 
@@ -87,7 +87,7 @@ test_data = {
             "suit": "hearts"
         },
         {
-            "rank": "6",
+            "rank": "A",
             "suit": "clubs"
         }
     ]
