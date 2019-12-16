@@ -83,11 +83,11 @@ test_data = {
             "suit": "spades"
         },
         {
-            "rank": "2",
+            "rank": "6",
             "suit": "hearts"
         },
         {
-            "rank": "1",
+            "rank": "6",
             "suit": "clubs"
         }
     ]
