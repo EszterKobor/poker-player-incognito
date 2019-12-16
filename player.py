@@ -12,6 +12,26 @@ class Player:
                     ranks.append(cards_to_choose_from[card][cardkey])
         return ranks
 
+    def get_suits(self, cards_to_choose_from):
+        suits = []
+        for card in range(len(cards_to_choose_from)):
+            for cardkey in cards_to_choose_from[card].keys():
+                if cardkey == "suit":
+                    suits.append(cards_to_choose_from[card][cardkey])
+        return suits
+
+    def is_flush(self, cards_to_choose_from):
+        suits = self.get_suits(cards_to_choose_from)
+        for suit in suits:
+            if suits.count(suit) > 4:
+                return True
+
+    def is_poker(self, cards_to_choose_from):
+        ranks = self.get_ranks(cards_to_choose_from)
+        for rank in ranks:
+            if ranks.count(rank) > 3:
+                return True
+
     def is_drill(self, cards_to_choose_from):
         ranks = self.get_ranks(cards_to_choose_from)
         for rank in ranks:
@@ -74,6 +94,14 @@ class Player:
                 elif self.is_high_pair(cards_to_choose_from) and current_buy_in <= 100:
                     return to_call
 
+        if self.is_poker(cards_to_choose_from):
+            to_raise += 400
+            return to_raise
+
+        if self.is_flush(cards_to_choose_from):
+            to_raise += 300
+            return to_raise
+
         if self.is_drill(cards_to_choose_from):
             to_raise += 200
             return to_raise
@@ -84,11 +112,13 @@ class Player:
         if self.get_number_of_pairs(cards_to_choose_from) == 2:
             to_raise += 100
             return to_raise
+        elif self.get_number_of_pairs(cards_to_choose_from) == 1:
+            return to_raise
 
         if actives_counter > 2:
             return 0
         else:
-            return to_raise
+            to_raise
 
 
     def showdown(self, game_state):

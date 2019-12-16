@@ -60,11 +60,11 @@ test_data = {
 
                 {
                     "rank": "6",
-                    "suit": "hearts"
+                    "suit": "clubs"
                 },
                 {
                     "rank": "K",
-                    "suit": "spades"
+                    "suit": "clubs"
                 }
             ]
         },
@@ -80,14 +80,14 @@ test_data = {
     "community_cards": [
         {
             "rank": "4",
-            "suit": "spades"
+            "suit": "clubs"
         },
         {
             "rank": "6",
-            "suit": "hearts"
+            "suit": "clubs"
         },
         {
-            "rank": "K",
+            "rank": "A",
             "suit": "clubs"
         }
     ]
