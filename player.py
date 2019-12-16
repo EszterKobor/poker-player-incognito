@@ -15,12 +15,10 @@ class Player:
         bet_already_made_me = me["bet"]  # players[in_action][bet]
         my_cards = me["hole_cards"]
         community_cars = game_data["community_cards"]
-        # card_a_can_choose_from =
+        card_a_can_choose_from = my_cards + community_cars
 
         to_call = current_buy_in - bet_already_made_me
         to_raise = to_call + minimum_raise
-
-
 
         return to_raise
 
