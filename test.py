@@ -87,7 +87,7 @@ test_data = {
             "suit": "hearts"
         },
         {
-            "rank": "A",
+            "rank": "K",
             "suit": "clubs"
         }
     ]
