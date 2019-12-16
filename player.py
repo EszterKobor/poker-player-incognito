@@ -20,8 +20,6 @@ class Player:
         to_call = current_buy_in - bet_already_made_me
         to_raise = to_call + minimum_raise
 
-
-
         return 1000
 
 
