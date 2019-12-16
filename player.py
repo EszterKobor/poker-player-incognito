@@ -22,7 +22,7 @@ class Player:
 
 
 
-        return 900
+        return 1000
 
 
     def showdown(self, game_state):
