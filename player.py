@@ -118,7 +118,37 @@ class Player:
         if actives_counter > 2:
             return 0
         else:
-            to_raise
+
+            if game_round == 0:
+                if self.get_number_of_pairs(cards_to_choose_from) == 1 or current_buy_in < 20:
+                    if current_buy_in <= 50:
+                        return to_call
+                    elif self.is_high_pair(cards_to_choose_from) and current_buy_in <= 50:
+                        return to_call
+
+            if self.is_poker(cards_to_choose_from):
+                to_raise += 300
+                return to_raise
+
+            if self.is_flush(cards_to_choose_from):
+                to_raise += 150
+                return to_raise
+
+            if self.is_drill(cards_to_choose_from):
+                to_raise += 50
+                return to_raise
+
+            if self.is_high_pair(cards_to_choose_from) and game_round < 2:
+                to_raise += 20
+
+            if self.get_number_of_pairs(cards_to_choose_from) == 2:
+                to_raise += 30
+                return to_raise
+            elif self.get_number_of_pairs(cards_to_choose_from) == 1:
+                return to_raise
+
+            return to_call
+
 
 
     def showdown(self, game_state):
